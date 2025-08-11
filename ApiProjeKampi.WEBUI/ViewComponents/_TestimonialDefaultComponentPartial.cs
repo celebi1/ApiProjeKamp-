@@ -2,12 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace ApiProjeKampi.WEBUI.ViewComponents
-{ 
+namespace ApiProjeKampi.WebUI.ViewComponents
+{
     public class _TestimonialDefaultComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public _TestimonialDefaultComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
