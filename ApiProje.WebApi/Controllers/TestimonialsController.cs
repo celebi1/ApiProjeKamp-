@@ -3,7 +3,7 @@ using ApiProje.WebApi.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiProjeKampi.WebApi.Controllers
+namespace ApiProje.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,7 +27,7 @@ namespace ApiProjeKampi.WebApi.Controllers
         {
             _context.Testimonials.Add(Testimonial);
             _context.SaveChanges();
-            return Ok("Hizmet ekleme işlemi başarılı");
+            return Ok("Referans ekleme işlemi başarılı");
         }
 
         [HttpDelete]
@@ -36,7 +36,7 @@ namespace ApiProjeKampi.WebApi.Controllers
             var value = _context.Testimonials.Find(id);
             _context.Testimonials.Remove(value);
             _context.SaveChanges();
-            return Ok("Hizmet silme işlemi başarılı");
+            return Ok("Referans silme işlemi başarılı");
         }
 
         [HttpGet("GetTestimonial")]
@@ -51,7 +51,7 @@ namespace ApiProjeKampi.WebApi.Controllers
         {
             _context.Testimonials.Update(Testimonial);
             _context.SaveChanges();
-            return Ok("Hizmet güncelleme işlemi başarılı");
+            return Ok("Referans güncelleme işlemi başarılı");
         }
     }
 }
