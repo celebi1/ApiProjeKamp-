@@ -7,49 +7,49 @@ namespace ApiProjeKampi.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TestimonialsController : ControllerBase
+    public class ServicesController : ControllerBase
     {
         private readonly ApiContext _context;
-        public TestimonialsController(ApiContext context)
+        public ServicesController(ApiContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IActionResult TestimonialList()
+        public IActionResult ServiceList()
         {
-            var values = _context.Testimonials.ToList();
+            var values = _context.Services.ToList();
             return Ok(values);
         }
 
         [HttpPost]
-        public IActionResult CreateTestimonial(Testimonial Testimonial)
+        public IActionResult CreateService(Service service)
         {
-            _context.Testimonials.Add(Testimonial);
+            _context.Services.Add(service);
             _context.SaveChanges();
             return Ok("Hizmet ekleme işlemi başarılı");
         }
 
         [HttpDelete]
-        public IActionResult DeleteTestimonial(int id)
+        public IActionResult DeleteService(int id)
         {
-            var value = _context.Testimonials.Find(id);
-            _context.Testimonials.Remove(value);
+            var value = _context.Services.Find(id);
+            _context.Services.Remove(value);
             _context.SaveChanges();
             return Ok("Hizmet silme işlemi başarılı");
         }
 
-        [HttpGet("GetTestimonial")]
-        public IActionResult GetTestimonial(int id)
+        [HttpGet("GetService")]
+        public IActionResult GetService(int id)
         {
-            var value = _context.Testimonials.Find(id);
+            var value = _context.Services.Find(id);
             return Ok(value);
         }
 
         [HttpPut]
-        public IActionResult UpdateTestimonial(Testimonial Testimonial)
+        public IActionResult UpdateService(Service service)
         {
-            _context.Testimonials.Update(Testimonial);
+            _context.Services.Update(service);
             _context.SaveChanges();
             return Ok("Hizmet güncelleme işlemi başarılı");
         }
