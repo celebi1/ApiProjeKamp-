@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Requirements\" />
+    <Folder Include="ViewComponents\AdminLayoutViewComponent\" />
   </ItemGroup>
 
 </Project>
